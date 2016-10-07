@@ -1,0 +1,5 @@
+Setup Artik10
+
+curl downloads.arduino.cc/libArduino/install_artik_prereq.sh | sh
+dnf install telnet
+dnf install fortune
