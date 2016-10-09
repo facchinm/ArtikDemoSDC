@@ -23,10 +23,10 @@ void setup() {
   Serial.println(ssid);
   Console.begin();
 
-  WiFi.begin(ssid, pass);
-  while (WiFi.status() != WL_CONNECTED) {
-    Serial.print(".");
-    delay(2000);
+  while (WiFi.begin(ssid, pass) != WL_CONNECTED) {
+    // unsuccessful, retry in 4 seconds
+    Serial.print("failed ... ");
+    Serial.print("retrying ... ");
   }
 
   Serial.println("");
@@ -53,7 +53,7 @@ void loop() {
       return;
     }
 
-    String response = "Thanks " + m.sender + " for joining us at SDC 2016";
+    String response = "Thanks " + m.sender + " for joining us at MFR 2016";
     String fortune = System.runShellCommand("fortune -n 100 -s linux linuxcookie computers science startrek ");
     Serial.println(fortune);
     fortune.replace("\n", " ");

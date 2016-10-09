@@ -37,7 +37,6 @@ void setup() {
   while (WiFi.begin(ssid, pass) != WL_CONNECTED) {
     // unsuccessful, retry in 4 seconds
     Serial.print("failed ... ");
-    delay(4000);
     Serial.print("retrying ... ");
   }
 

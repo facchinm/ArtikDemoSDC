@@ -3,3 +3,8 @@ Setup Artik10
 curl downloads.arduino.cc/libArduino/install_artik_prereq.sh | sh
 dnf install telnet
 dnf install fortune
+dnf install xdotool
+
+user: root pwd: root
+
+wpa_passphrase $name $password >> /etc/wpa_supplicant/wpa_supplicant.conf
